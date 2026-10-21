@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="Victoria Sharapova, home">VICKY<span>✳</span></Link>
+        <Link className="wordmark" href="/" aria-label="Victoria Sharapova, home">Victoria<span>✳</span></Link>
         <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="mailto:Sharapova.svr@gmail.com">Contact ↗</a></nav>
       </header>
 

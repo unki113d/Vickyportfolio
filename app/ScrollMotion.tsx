@@ -22,7 +22,7 @@ export default function ScrollMotion() {
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.14 });
+    }, { rootMargin: "0px 0px 24% 0px", threshold: 0.01 });
 
     elements.forEach((element) => observer.observe(element));
     return () => {
