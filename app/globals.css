@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=Caveat:wght@500;600;700&family=DotGothic16&family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&family=Roboto+Condensed:wght@300;400;500;600;700&family=Silkscreen:wght@400;700&display=swap');
 :root{color-scheme:light;--blue:#202fa5;--ink:#151628;--paper:#f8f8f3;--margin:clamp(20px,3.2vw,54px)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Roboto Condensed',Arial,sans-serif}a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--blue);outline-offset:5px}::selection{background:#e3e67e;color:var(--blue)}
 .site-header{height:88px;padding:0 var(--margin);display:flex;align-items:center;justify-content:space-between;position:relative;z-index:20}.wordmark{font-size:28px;font-weight:700;letter-spacing:-.09em;color:var(--blue);line-height:1}.wordmark span{font-size:.75em;margin-left:3px;vertical-align:top}.site-header nav{display:flex;gap:clamp(20px,3vw,50px);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}.site-header nav a{transition:color .2s}.site-header nav a:hover{color:var(--blue)}
@@ -82,3 +82,52 @@ main:not(.work-page){background:linear-gradient(180deg,#f7f7f3 0%,#f3f4f4 19%,#e
 @media(max-width:850px){.project-card:nth-child(even) .project-carousel{grid-column:auto;grid-row:auto}.project-carousel-track{height:clamp(370px,70vw,500px)}}
 @media(max-width:600px){.project-carousel-track{height:clamp(300px,100vw,420px)}.project-carousel-slide img{padding:4px}.project-carousel-controls button{width:42px;height:42px}}
 @media(prefers-reduced-motion:reduce){.project-carousel-track{scroll-behavior:auto}}
+
+/* Project galleries use the artwork edge to edge. The project copy sits on the same baseline as the carousel controls. */
+.project-carousel-track{height:auto;aspect-ratio:16 / 9;background:transparent}
+.project-carousel-slide{background:transparent}
+.project-carousel-slide img{padding:0}
+.project-info{align-self:end;padding-bottom:56px}
+@media(max-width:850px){.project-info{padding-bottom:0}.project-carousel-track{height:auto;aspect-ratio:16 / 9}}
+
+.project-carousel-slide{cursor:zoom-in}
+.project-carousel-slide:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
+.image-lightbox{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:clamp(20px,5vw,72px);background:rgba(32,63,154,.88);cursor:zoom-out}
+.image-lightbox-content{position:relative;width:min(94vw,1600px);height:min(88vh,1000px);cursor:default}
+.image-lightbox-content img{object-fit:contain}
+.image-lightbox-close{position:fixed;top:clamp(16px,3vw,36px);right:clamp(16px,3vw,36px);z-index:1;width:52px;height:52px;border:2px solid var(--pink);border-radius:50%;background:var(--paper);color:var(--pink);font:500 34px/1 'Oswald','Roboto Condensed',sans-serif;cursor:pointer;transition:transform .2s ease,background-color .2s ease,color .2s ease}
+.image-lightbox-close:hover{transform:rotate(90deg);background:var(--pink);color:#fff}
+.image-lightbox-close:focus-visible{outline:2px solid #fff;outline-offset:4px}
+
+/* Portfolio palette. */
+:root{--blue:#203F9A;--ink:var(--blue);--pink:#E84797;--paper:#FFFFFF;--surface:#f6f5ff;--soft-blue:#94C2DA}
+body{color:var(--blue)}
+main:not(.work-page),.work-page{background:var(--paper);color:var(--blue)}
+.hero h1,.section-intro h2,.about-section h2,.about-section em,.collection-meta h3,.work-heading h1,.project-info h2{color:var(--pink)}
+.wordmark span,.hero-spark,.collection-arrow{color:var(--pink)}
+.pill-link{background:var(--pink);color:#fff}.pill-link:hover{background:var(--blue)}
+.orb-one{background:#94C2DA}.orb-two{background:#E7A0CC}.hero-orb{opacity:.22}
+.about-section,.work-end{background:var(--surface);color:var(--blue)}.about-section:after{color:var(--pink);opacity:.06}
+.section-intro::after{display:none}
+.site-header nav a:hover{color:var(--pink)}
+::selection{background:#E7A0CC;color:#203F9A}
+.collection-card.personal .collection-image img{object-position:20% center}
+.about-section h2 .about-primary{color:var(--blue)}
+.dynamic-phrase{display:block;width:100%;height:1.08em;line-height:1.08;color:var(--pink);font-size:inherit;font-style:normal;font-weight:600;letter-spacing:-.04em;white-space:nowrap;transition:font-family .2s ease}
+.dynamic-phrase-pixel{font-family:'Silkscreen',monospace;letter-spacing:-.08em}
+.dynamic-phrase-bubble{font-family:'Bungee',sans-serif;letter-spacing:-.05em}
+.dynamic-phrase-italic{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;letter-spacing:-.07em}
+.dynamic-phrase-handwritten{font-family:'Caveat',cursive;font-weight:700;letter-spacing:-.03em}
+.dynamic-phrase-display{font-family:'Bebas Neue','Oswald',sans-serif;letter-spacing:.01em}
+.dynamic-phrase-grotesk{font-family:'DotGothic16','Roboto Condensed',sans-serif;letter-spacing:-.05em}
+.dynamic-phrase-serif{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-spacing:-.07em}
+.hero-copy>.eyebrow{font-size:15px}
+@media(max-width:600px){.hero-copy>.eyebrow{font-size:13px}}
+.personal-gallery{padding:0 var(--margin) 140px}
+.personal-gallery-grid{columns:3 260px;column-gap:18px}
+.personal-gallery-item{position:relative;display:block;width:100%;height:auto;break-inside:avoid;margin:0 0 18px;padding:0;border:0;background:var(--surface);overflow:hidden;cursor:zoom-in}
+.personal-gallery-item img{object-fit:cover;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.personal-gallery-item:hover img{transform:scale(1.025)}
+.personal-gallery-item:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
+@media(max-width:850px){.personal-gallery{padding-bottom:90px}.personal-gallery-grid{columns:2 220px}}
+@media(max-width:600px){.personal-gallery{padding:0 var(--margin) 70px}.personal-gallery-grid{columns:1}.personal-gallery-item{margin-bottom:14px}}

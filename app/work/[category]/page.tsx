@@ -2,10 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ContactLinks from "../../ContactLinks";
+import PersonalGallery from "../../PersonalGallery";
 import ProjectCarousel from "../../ProjectCarousel";
 
 const gallery = (project: string, items: [string, string][]) =>
   items.map(([src, description]) => ({ src, alt: `${project}: ${description}` }));
+
+const personalGalleryImages = [
+  { src: "/images/personal-gallery/01-pink-flower.webp", alt: "Pink flower character illustration", width: 2618, height: 3965 },
+  { src: "/images/personal-gallery/02-objects.webp", alt: "Illustrated camera, soda and healing balm", width: 2425, height: 1905 },
+  { src: "/images/personal-gallery/03-forest-character.webp", alt: "Sleeping forest character illustration", width: 2050, height: 1921 },
+  { src: "/images/personal-gallery/04-pink-chibi.webp", alt: "Pink chibi character illustration", width: 1984, height: 2290 },
+  { src: "/images/personal-gallery/05-players-model.webp", alt: "Players model character sheet", width: 2479, height: 1593 },
+  { src: "/images/personal-gallery/06-maneki-neko.webp", alt: "Maneki-neko illustration", width: 1946, height: 2368 },
+  { src: "/images/personal-gallery/07-cat-charm.webp", alt: "Cat charm illustration", width: 1947, height: 2369 },
+  { src: "/images/personal-gallery/08-blue-fashion.webp", alt: "Blue fashion illustration", width: 4532, height: 1133 },
+  { src: "/images/personal-gallery/09-portrait.webp", alt: "Portrait study", width: 1870, height: 2392 },
+] as const;
 
 const data = {
   design: {
@@ -14,12 +27,16 @@ const data = {
     projects: [
       {
         title: "Intern_init",
-        type: "Event identity · Visual system",
+        type: "visual identity · Branding",
         images: gallery("Intern_init", [
-          ["/images/intern.png", "The central event identity"],
-          ["/images/gallery/intern-visual-identity.webp", "Visual identity presentation"],
-          ["/images/gallery/intern-digital-application.webp", "Digital event application"],
-          ["/images/gallery/intern-pass-design.webp", "Visitor, staff and artist passes"],
+          ["/images/intern-init/01-cover.webp", "The central Intern_init event identity"],
+          ["/images/intern-init/02-about-project.webp", "Project overview"],
+          ["/images/intern-init/03-posters.webp", "Poster applications"],
+          ["/images/intern-init/04-visual-identity.webp", "Visual identity system"],
+          ["/images/intern-init/05-passes.webp", "Guest, staff and artist passes"],
+          ["/images/intern-init/06-laptop.webp", "Event website on a laptop"],
+          ["/images/intern-init/07-social.webp", "Social media application"],
+          ["/images/intern-init/08-merchandise.webp", "Merchandise applications"],
         ]),
         description: "A visual identity for a student internship fair, designed to make company booths feel welcoming, lively and more personal than a typical recruitment event.",
       },
@@ -27,52 +44,31 @@ const data = {
         title: "Crawl",
         type: "Bar design concept · Visual identity",
         images: gallery("Crawl", [
-          ["/images/crawl.png", "Illustrated character artwork"],
-          ["/images/gallery/crawl-identity.webp", "Crawl wordmark and illustration"],
-          ["/images/gallery/crawl-menu-illustration.webp", "Menu illustration"],
-          ["/images/gallery/crawl-shirt-design.webp", "Merchandise concepts"],
-          ["/images/gallery/crawl-illustration.webp", "Character illustration"],
-          ["/images/gallery/crawl-merchandise.webp", "Merchandise in use"],
-          ["/images/gallery/crawl-character-study.webp", "Character design study"],
-          ["/images/gallery/crawl-character-art.webp", "Finished character artwork"],
-          ["/images/gallery/crawl-artboard.webp", "Crawl design board"],
+          ["/images/crawl/01-menu-mockup.webp", "Cyan snack menu mockup"],
+          ["/images/crawl/02-concept-slide.webp", "Crawl concept slide"],
+          ["/images/crawl/03-menu-layout.webp", "Snack and drinks menu layout"],
         ]),
-        description: "A visual identity concept for a night-time live music bar, with custom illustrations for its menu, merchandise and brand materials.",
+        description: "[WIP] a visual identity concept for a night-time live music bar, with custom illustrations for its menu, merchandise and brand materials.",
       },
       {
-        title: "Event applications",
-        type: "Applications · Merchandise",
-        images: gallery("Event applications", [
-          ["/images/intern-merch.png", "Event merchandise"],
-          ["/images/gallery/intern-laptop-application.webp", "Website shown on a laptop"],
-          ["/images/gallery/intern-event-display.webp", "Outdoor event display"],
-          ["/images/gallery/intern-merch-model.webp", "Merchandise and apparel"],
-          ["/images/gallery/intern-merchandise.webp", "Branded clothing"],
-        ]),
-        description: "The Intern_init identity applied across tickets, posters, digital assets and merchandise.",
-      },
-      {
-        title: "Typography studies",
+        title: "Event posters",
         type: "Posters · Typography",
-        images: gallery("Typography studies", [
-          ["/images/gallery/poster-study-light.webp", "Light poster composition"],
-          ["/images/gallery/poster-study-dark.webp", "Dark poster composition"],
-          ["/images/gallery/poster-background-blue.webp", "Blue typographic study"],
-          ["/images/gallery/poster-background-warm.webp", "Warm gradient poster"],
-          ["/images/gallery/poster-background-violet.webp", "Violet gradient poster"],
-          ["/images/gallery/poster-texture.webp", "Experimental texture study"],
+        images: gallery("Event posters", [
+          ["/images/event-posters/01-poster-1.webp", "Blue gradient poster"],
+          ["/images/event-posters/02-poster-2.webp", "Textured green and blue poster"],
+          ["/images/event-posters/03-poster-3.webp", "Dark oval poster"],
+          ["/images/event-posters/04-poster.webp", "Distorted typography poster"],
         ]),
-        description: "A series of expressive poster experiments exploring texture, typography and contrast.",
+        description: "A study series of expressive poster experiments exploring texture, typography and contrast.",
       },
       {
         title: "Education app illustrations",
         type: "Illustration · Character design",
         images: gallery("Education app illustrations", [
-          ["/images/gallery/education-app-cat.webp", "Cat mascot with an orange"],
-          ["/images/gallery/education-app-cat-variant.webp", "Alternate cat mascot pose"],
-          ["/images/gallery/education-app-holiday-cat.webp", "Holiday mascot illustration"],
-          ["/images/gallery/education-app-gift-cat.webp", "Mascot with a gift"],
-          ["/images/gallery/education-app-winter-cat.webp", "Winter holiday mascot"],
+          ["/images/education-app/01-1080x1080-1.webp", "Mascot with an orange and ornament"],
+          ["/images/education-app/02-1080x1080.webp", "Holiday mascot decorating a tree"],
+          ["/images/education-app/03-1080x1080-3.webp", "Mascot holding an orange"],
+          ["/images/education-app/04-1080x1080-2.webp", "Winter mascot on a sled"],
         ]),
         description: "Bright character illustrations created for a children’s education app.",
       },
@@ -86,51 +82,37 @@ const data = {
         title: "Lost Sparkle",
         type: "Game concept · Character design",
         images: gallery("Lost Sparkle", [
-          ["/images/sparkle.png", "Illustrated game cover"],
-          ["/images/gallery/lost-sparkle-world.webp", "Game world and locations"],
-          ["/images/gallery/lost-sparkle-characters.webp", "Character lineup"],
-          ["/images/gallery/lost-sparkle-logo.webp", "Game logo"],
-          ["/images/gallery/lost-sparkle-loading.webp", "Loading screen"],
-          ["/images/gallery/lost-sparkle-journal.webp", "In-game journal interface"],
-          ["/images/gallery/lost-sparkle-room.webp", "Illustrated bedroom scene"],
-          ["/images/gallery/lost-sparkle-interface.webp", "Game interface exploration"],
-          ["/images/gallery/lost-sparkle-room-art.webp", "Interior environment illustration"],
+          ["/images/lost-sparkle/01-cover.webp", "Illustrated game cover"],
+          ["/images/lost-sparkle/02-bedroom.webp", "Illustrated bedroom scene"],
+          ["/images/lost-sparkle/03-character-sketches.webp", "Character sketches"],
+          ["/images/lost-sparkle/04-character-lineup.webp", "Character lineup"],
+          ["/images/lost-sparkle/05-character-turnaround.webp", "Character turnaround"],
+          ["/images/lost-sparkle/06-world-scene.webp", "Game world and locations"],
         ]),
-        description: "A game concept developed through its characters, environments, interface and visual identity.",
+        description: "A project I made within one week as my final project for 3rd year studying in college. My goal was to create a visual concept for a game of my choice.",
+      },
+      {
+        title: "SYNTA//hex",
+        type: "Character design · Visual storytelling",
+        images: gallery("SYNTA//hex", [
+          ["/images/synta-hex/01-fumiko.webp", "Fumiko character concept"],
+          ["/images/synta-hex/02-zane.webp", "Zane character concept"],
+          ["/images/synta-hex/03-selene.webp", "Selene character concept"],
+          ["/images/synta-hex/04-zane-art.webp", "Zane concept art"],
+          ["/images/synta-hex/05-fumiko-art.webp", "Fumiko concept art"],
+          ["/images/synta-hex/06-selene-art.webp", "Selene concept art"],
+        ]),
+        description: "My graduation project at college, where I developed the setting for a game and later created character concept art and illustrations featuring them.",
       },
       {
         title: "Mountain Ryokan",
-        type: "Game concept · Illustration",
+        type: "Logo · Illustration · Concept art",
         images: gallery("Mountain Ryokan", [
-          ["/images/ryokan.png", "Mountain inn key illustration"],
-          ["/images/gallery/ryokan-process-board.webp", "Early scene and character exploration"],
-          ["/images/gallery/ryokan-key-art.webp", "Finished inn illustration"],
-          ["/images/gallery/ryokan-sketch.webp", "Environment sketch"],
-          ["/images/gallery/ryokan-scene-study.webp", "Scene composition studies"],
-          ["/images/gallery/ryokan-final-art.webp", "Final interior artwork"],
-          ["/images/gallery/ryokan-interior-sketch.webp", "Interior concept sketch"],
-          ["/images/gallery/ryokan-character-concept.webp", "Character concept"],
-          ["/images/gallery/ryokan-final-scene.webp", "Finished story scene"],
+          ["/images/ryokan.webp", "Mountain inn key illustration"],
+          ["/images/mountain-ryokan/02-logo-explorations.webp", "Logo explorations"],
+          ["/images/mountain-ryokan/03-character-concept.webp", "Character concept and color studies"],
         ]),
-        description: "An indie-game concept inspired by the atmosphere of a mountain inn, developed during a college internship.",
-      },
-      {
-        title: "Fumiko Hinagiri",
-        type: "Character design · Visual storytelling",
-        images: gallery("Fumiko Hinagiri", [
-          ["/images/cyberpunk.png", "Fumiko, Zane and Selene character lineup"],
-          ["/images/gallery/fumiko-process.webp", "Early character sketches"],
-          ["/images/gallery/fumiko-board.webp", "Fumiko design board"],
-          ["/images/gallery/fumiko-artwork.webp", "Finished Fumiko artwork"],
-          ["/images/gallery/fumiko-artwork-2.webp", "Fumiko character artwork"],
-          ["/images/gallery/fumiko-lineup.webp", "Character lineup and poses"],
-          ["/images/gallery/zane-board.webp", "Zane character design board"],
-          ["/images/gallery/zane-artwork.webp", "Zane finished artwork"],
-          ["/images/gallery/zane-artwork-2.webp", "Zane alternate artwork"],
-          ["/images/gallery/selene-board.webp", "Selene character design board"],
-          ["/images/gallery/selene-artwork.webp", "Selene finished artwork"],
-        ]),
-        description: "A cyberpunk band explored through its characters, from early sketches to finished artwork and visual identity.",
+        description: "An indie-game concept inspired by the atmosphere of a japanese mountain inn, that I was participating in during a college internship.",
       },
     ],
   },
@@ -139,43 +121,10 @@ const data = {
     subtitle: "A place for exploration, experiments and making just because.",
     projects: [
       {
-        title: "Digital playground",
+        title: "Personal gallery",
         type: "Illustration · Personal",
-        images: gallery("Digital playground", [
-          ["/images/personal.png", "Panoramic personal illustration"],
-          ["/images/gallery/personal-panorama.webp", "Wide personal artwork"],
-          ["/images/gallery/personal-character-illustration.webp", "Fantasy character illustration"],
-          ["/images/gallery/personal-portrait-study.webp", "Portrait study"],
-        ]),
-        description: "An evolving mix of colour, mood and character-focused illustration.",
-      },
-      {
-        title: "Sketchbook",
-        type: "Illustration · Personal",
-        images: gallery("Sketchbook", [
-          ["/images/personal2.png", "Sketchbook artwork"],
-          ["/images/gallery/personal-object-studies.webp", "Everyday object studies"],
-        ]),
-        description: "Fragments from an ongoing personal art practice.",
-      },
-      {
-        title: "Character studies",
-        type: "Illustration · Personal",
-        images: gallery("Character studies", [
-          ["/images/personal3.png", "Character study"],
-          ["/images/gallery/personal-character-model.webp", "Character model sheet"],
-        ]),
-        description: "More characters, studies and small visual stories.",
-      },
-      {
-        title: "Color studies",
-        type: "Illustration · Personal",
-        images: gallery("Color studies", [
-          ["/images/personal4.png", "Color and shape study"],
-          ["/images/gallery/personal-lucky-cat-a.webp", "Lucky cat illustration"],
-          ["/images/gallery/personal-lucky-cat-b.webp", "Alternate lucky cat illustration"],
-        ]),
-        description: "Another page from the visual notebook.",
+        images: gallery("Personal gallery", personalGalleryImages.map(({ src, alt }) => [src, alt])),
+        description: "A collection of personal illustrations, character studies and visual experiments.",
       },
     ],
   },
@@ -190,9 +139,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   if (!(category in data)) notFound();
   const collection = data[category as Category];
   return <main className={`work-page work-${category}`}>
-    <header className="site-header"><Link className="wordmark" href="/">Victoria<span>✳</span></Link><nav aria-label="Main navigation"><Link href="/#work">All work</Link><Link href="/#about">About</Link><a href="mailto:Sharapova.svr@gmail.com">Contact ↗</a></nav></header>
+    <header className="site-header"><Link className="wordmark" href="/" aria-label="Vixcci, home">vixcci<span>✳</span></Link><nav aria-label="Main navigation"><Link href="/#work">All work</Link><Link href="/#about">About</Link><a href="mailto:Sharapova.svr@gmail.com">Contact ↗</a></nav></header>
     <div className="work-heading"><Link className="back-link" href="/#work">← BACK TO WORK</Link><h1 data-motion="left">{collection.title}</h1><p data-motion="right">{collection.subtitle}</p></div>
-    <div className="projects-grid">{collection.projects.map((project, i) => <article className="project-card" key={project.title} data-motion={i % 2 === 0 ? "right" : "left"}><ProjectCarousel title={project.title} images={project.images} /><div className="project-info"><span className="eyebrow">{project.type}</span><h2>{project.title}</h2><p>{project.description}</p></div></article>)}</div>
+    {category === "personal" ? <PersonalGallery images={personalGalleryImages} /> : <div className="projects-grid">{collection.projects.map((project, i) => <article className="project-card" key={project.title} data-motion={i % 2 === 0 ? "right" : "left"}><ProjectCarousel title={project.title} images={project.images} /><div className="project-info"><span className="eyebrow">{project.type}</span><h2>{project.title}</h2><p>{project.description}</p></div></article>)}</div>}
     <div className="work-end"><span>SEEN ENOUGH? THERE&apos;S MORE.</span><Link href="/#work">Explore other collections ↗</Link></div><footer className="site-footer"><ContactLinks /><div><span>© VICTORIA SHARAPOVA</span></div></footer>
   </main>;
 }
