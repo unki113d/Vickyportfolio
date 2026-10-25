@@ -139,9 +139,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   if (!(category in data)) notFound();
   const collection = data[category as Category];
   return <main className={`work-page work-${category}`}>
-    <header className="site-header"><Link className="wordmark" href="/" aria-label="Vixcci, home">vixcci<span>✳︎</span></Link><nav aria-label="Main navigation"><Link href="/#work">All work</Link><Link href="/#about">About</Link><a href="mailto:Sharapova.svr@gmail.com">Contact ↗</a></nav></header>
-    <div className="work-heading"><Link className="back-link" href="/#work">← BACK TO WORK</Link><h1 data-motion="left">{collection.title}</h1><p data-motion="right">{collection.subtitle}</p></div>
+    <header className="site-header"><Link className="wordmark" href="/" aria-label="Vixcci, home">vixcci<span>✳︎</span></Link><nav aria-label="Main navigation"><Link href="/#work">All work</Link><Link href="/#about">About</Link><a href="mailto:Sharapova.svr@gmail.com">Contact ↗︎</a></nav></header>
+    <div className="work-heading"><Link className="back-link" href="/#work">←︎ BACK TO WORK</Link><h1 data-motion="left">{collection.title}</h1><p data-motion="right">{collection.subtitle}</p></div>
     {category === "personal" ? <PersonalGallery images={personalGalleryImages} /> : <div className="projects-grid">{collection.projects.map((project, i) => <article className="project-card" key={project.title} data-motion={i % 2 === 0 ? "right" : "left"}><ProjectCarousel title={project.title} images={project.images} /><div className="project-info"><span className="eyebrow">{project.type}</span><h2>{project.title}</h2><p>{project.description}</p></div></article>)}</div>}
-    <div className="work-end"><span>SEEN ENOUGH? THERE&apos;S MORE.</span><Link href="/#work">Explore other collections ↗</Link></div><footer className="site-footer"><ContactLinks /><div><span>© VICTORIA SHARAPOVA</span></div></footer>
+    <div className="work-end"><span>SEEN ENOUGH? THERE&apos;S MORE.</span><Link href="/#work">Explore other collections ↗︎</Link></div><footer className="site-footer"><ContactLinks /><div><span>© VICTORIA SHARAPOVA</span></div></footer>
   </main>;
 }

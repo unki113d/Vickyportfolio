@@ -74,10 +74,10 @@ export default function ProjectCarousel({
       {images.length > 1 && (
         <div className="project-carousel-controls">
           <button type="button" onClick={() => move(-1)} aria-label={`Previous ${title} image`}>
-            <span aria-hidden="true">←</span>
+            <span aria-hidden="true">←︎</span>
           </button>
           <button type="button" onClick={() => move(1)} aria-label={`Next ${title} image`}>
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">→︎</span>
           </button>
         </div>
       )}
