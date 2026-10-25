@@ -13,14 +13,14 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="Vixcci, home">vixcci<span>✳</span></Link>
+        <Link className="wordmark" href="/" aria-label="Vixcci, home">vixcci<span>✳︎</span></Link>
         <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="mailto:Sharapova.svr@gmail.com">Contact ↗</a></nav>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-orb orb-one" aria-hidden="true" /><div className="hero-orb orb-two" aria-hidden="true" />
         <div className="hero-kicker">ILLUSTRATOR / GRAPHIC DESIGNER</div>
-        <div className="hero-photo-wrap"><div className="polaroid"><div className="polaroid-photo"><Image src="/images/victoria-portrait.jpg" alt="Victoria Sharapova" fill priority unoptimized sizes="(max-width: 700px) 72vw, 34vw" /></div></div><span className="hero-spark spark-a" aria-hidden="true">✳</span><span className="hero-spark spark-b" aria-hidden="true">✴</span></div>
+        <div className="hero-photo-wrap"><div className="polaroid"><div className="polaroid-photo"><Image src="/images/victoria-portrait.jpg" alt="Victoria Sharapova" fill priority unoptimized sizes="(max-width: 700px) 72vw, 34vw" /></div></div><span className="hero-spark spark-a" aria-hidden="true">✳︎</span><span className="hero-spark spark-b" aria-hidden="true">✴︎</span></div>
         <div className="hero-copy"><span className="eyebrow">HELLO! I&apos;M</span><h1 id="hero-title">Victoria<br /><em>Sharapova</em></h1><p>I draw characters, build visual worlds and turn ideas into expressive design. Welcome to my corner of the internet.</p><a className="pill-link" href="#work">Explore my work <span aria-hidden="true">↘</span></a></div>
       </section>
 
